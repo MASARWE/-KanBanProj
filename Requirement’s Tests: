@@ -1,0 +1,64 @@
+Requirement’s Tests:
+1.	A user is identified by an email and is authenticated by a password. 
+•	Test that a user can successfully log in with a valid email and password combination.
+•	Test that an error is displayed when a user enters an invalid email or invalid password.
+2.	A valid password is in the length of 6 to 20 characters and must include at least one uppercase letter, one small character, and a number. 
+•	Test that a password with all the requirements (length of 6 to 20 characters, at least one uppercase letter, one lowercase letter, and a number) is accepted as a valid password.
+•	Test that an error is displayed when a password is less than 6 characters in length, or more than 20 letters.
+•	Test that an error is displayed when a password doesn’t contain at least one uppercase and a lowercase letter, and it must contain a number.
+3.	Each email address must be unique in the system.
+•	Test that a new user can create an account with a unique email address that has not been used before in the system.
+•	Test that an error is displayed when a user tries to create an account with an email address that is already had been used.
+4.	A task has the following attributes:
+a)	A unique id in the board (integer).
+b)	The creation time.
+c)	A due date.
+d)	A title (max. 50 characters, not empty).
+e)	A description (max. 300 characters, optional).
+•	Test that a new task can be created with a unique ID, creation time, due date, title (less than or equal to 50 characters), and an optional description (less than or equal to 300 characters).
+•	Test that an error is displayed when a user tries to create a task with a title that exceeds the maximum length of 50 characters, or write a description that exceeds the maximum length of 300 characters.
+•	Test that an error is displayed when a user tries to create a task with an empty title.
+5.	A board has a name, and three columns: ‘backlog’, ‘in progress’, and ‘done’.
+•	Test that a new board can be created with a name and three columns named ‘backlog’, ‘in progress’, and ‘done’.
+•	Test that a board is created with three columns named ‘backlog’, ‘in progress’, and ‘done’ and that these column names cannot be changed.
+6.	A user cannot have two boards with the same name (though the same board name can be used by two different users).
+•	Test that a user can create a new board with a unique name that has not been used before in their own account.
+•	Test that an error is displayed when a user tries to create a new board with a name that is already used.
+•	Test that two different users can create boards with the same name without any issues.
+7.	The program will allow the registration of new users. Upon successful registration, the registered user is also logged in (no need to login again).
+•	Test that a new user can register with a unique email and a valid password, and that they are automatically logged in upon successful registration.
+•	Test that an error is displayed when a user tries to register with an email that is already used.
+•	Test that an error is displayed when a user tries to register with an invalid password (e.g too short, too long, missing required characters).
+8.	As a user, I want to be able to login using an email and a password, and logout.
+•	Test that an existing user can log in with their email and password and that they are successfully logged in.
+•	Test that an error message is displayed when a user tries to log in with an invalid email or password.
+•	Test that a logged-in user can log out and that they are successfully logged out.
+•	Test that an error is displayed if the user tries to log out while they are not logged in.
+9.	As a user, I want to be able to create boards and delete boards.
+•	Test that a user can create a new board with a unique name successfully.
+•	Test that an error is displayed when a user tries to create a board with a name that already exists.
+•	Test that a user can delete a board and that it no longer appears.
+•	Test that an error is displayed when a user tries to delete a board that does not exist.
+10.	By default, new users have no boards.
+•	Test that when a new user registers, their list of boards is empty.
+11.	Each column should support limiting the maximum number of its tasks.
+•	Test that a column can be set to have a maximum number of tasks and that any attempts to add more tasks beyond this limit are rejected.
+•	Test that if a task is deleted, the system properly adjusts the number of tasks in the column to ensure it stays within the limit.
+12.	By default, there will be no limit on the number of tasks.
+•	Test that when a new column is created, it does not have a maximum task limit by default.
+
+13.	The board will support adding new tasks to its backlog column only.
+•	Test that a new task can be created and added to the backlog column.
+•	Test that an error is displayed when a user tries to add a task to a column other than the backlog column.
+14.	Tasks can be moved from ‘backlog’ to ‘in progress’ or from ‘in progress’ to ‘done’ columns. No other movements are allowed.
+•	Test that a task can be moved from the backlog column to the in-progress column and from the in-progress column to the done column.
+•	Test that an error is displayed when a user tries to move a task from a column other than the backlog or in-progress column, or from the done column to any other column.
+15.	A task that is not done can be changed by the user.
+•	Test that a user can change a task that is not done yet, by changing its title, description, or due date.
+•	Test that an error is displayed when a user tries to change a task that is already done.
+16.	All the task data can be changed, except for the creation time.
+•	Test that a user can change all the data of the task except its creation time.
+•	Test that an error is displayed when a user tries to modify the creation time of a task.
+17.	As a user, I want to be able to list my 'in progress’ tasks from all of my boards, so that I can plan my schedule.
+•	Test that a user can list their 'in progress' tasks from all of their boards, and that the system displays the correct information for each task.
+•	Test that the system displays a message indicating that the user has no 'in progress' tasks when there are no tasks in progress.
